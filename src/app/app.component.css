@@ -1,0 +1,20 @@
+.rojo{
+  width: 150px;
+  height: 150px;
+  background-color: #E31E24;
+}
+
+.negro{
+
+  width: 150px;
+  height: 150px;
+  background-color: #292929;
+  margin: 10px 0px;
+}
+
+.azul{
+
+  width: 150px;
+  height: 150px;
+  background-color: #2483c7;
+}

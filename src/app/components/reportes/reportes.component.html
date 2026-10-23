@@ -1,0 +1,72 @@
+<div class="min-h-screen bg-slate-100 text-[#102b50] lg:flex">
+  <aside class="flex w-full flex-col bg-[#202326] text-white lg:fixed lg:inset-y-0 lg:left-0 lg:w-60">
+    <div class="flex items-center gap-3 px-5 py-5 lg:block lg:px-4 lg:pt-7 lg:text-center">
+      <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-3xl text-red-600 lg:mx-auto">✂</div>
+      <div class="lg:mt-3">
+        <h1 class="text-base font-bold leading-tight">Cortadora de Tubos<br class="hidden lg:block"> de Cartón</h1>
+        <p class="mt-2 hidden text-xs leading-relaxed text-slate-300 lg:block">Control de producción y seguimiento<br> de órdenes</p>
+      </div>
+    </div>
+
+    <nav class="flex gap-2 overflow-x-auto px-2 pb-3 lg:mt-2 lg:block lg:space-y-1">
+      <a class="flex shrink-0 items-center gap-3 rounded-lg bg-red-600 px-4 py-3 text-sm font-semibold shadow-md lg:mx-1" href="javascript:void(0)">
+        <span class="text-xl">▥</span> Reportes
+      </a>
+      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="javascript:void(0)"><span class="text-xl">⌂</span> Órdenes</a>
+      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="javascript:void(0)"><span class="text-xl">▣</span> Cortadoras</a>
+      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="javascript:void(0)"><span class="text-xl">⚙</span> Configuración</a>
+    </nav>
+
+    <div class="mt-auto hidden border-t border-white/15 p-5 lg:block">
+      <div class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-500 text-xl">♟</div>
+        <div><p class="text-sm font-semibold">Administrador</p><p class="text-xs text-slate-300">Admin</p></div>
+        <span class="ml-auto">⌄</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="min-w-0 flex-1 p-4 sm:p-5 lg:ml-60 lg:p-6">
+    <header class="mb-4 flex items-start gap-3">
+      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-red-600 text-2xl text-white shadow">▦</div>
+      <div>
+        <h2 class="text-2xl font-extrabold tracking-tight sm:text-3xl">Reportes de producción</h2>
+        <p class="mt-1 text-sm text-slate-600 sm:text-base">Consulta el rendimiento de las cortadoras y la producción de conos por día.</p>
+      </div>
+    </header>
+
+    <section class="mb-4 grid gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 shadow-sm md:grid-cols-2 xl:grid-cols-[1fr_1fr_1fr_1fr_auto]">
+      <label class="block text-sm font-semibold">Fecha inicial
+        <input [(ngModel)]="fechaInicial" type="date" class="mt-1.5 w-full rounded-md border border-blue-200 bg-white px-3 py-2 font-normal outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
+      </label>
+      <label class="block text-sm font-semibold">Fecha final
+        <input [(ngModel)]="fechaFinal" type="date" class="mt-1.5 w-full rounded-md border border-blue-200 bg-white px-3 py-2 font-normal outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
+      </label>
+      <label class="block text-sm font-semibold">Cortadora
+        <select [(ngModel)]="cortadora" class="mt-1.5 w-full rounded-md border border-blue-200 bg-white px-3 py-2 font-normal outline-none focus:border-blue-500">
+          <option>Todas</option><option value="1">Cortadora 1</option><option value="2">Cortadora 2</option><option value="3">Cortadora 3</option><option value="4">Cortadora 4</option><option value="5">Cortadora 5</option><option value="6">Cortadora 6</option><option value="7">Cortadora 7</option><option value="8">Cortadora 8</option><option value="9">Cortadora 9</option><option value="10">Cortadora 10</option>
+        </select>
+      </label>
+      <label class="block text-sm font-semibold">Operador
+        <select [(ngModel)]="operador" class="mt-1.5 w-full rounded-md border border-blue-200 bg-white px-3 py-2 font-normal outline-none focus:border-blue-500">
+          <option>Todos</option><option>Javier Garcia</option><option>Diego Gomez</option><option>Marcial Acosta</option><option>Pedro Jalabe</option>
+        </select>
+      </label>
+      <button (click)="buscar()" class="mt-auto flex items-center justify-center gap-2 rounded-lg bg-red-600 px-7 py-3 font-bold text-white shadow-sm transition hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-200">
+        <span class="text-xl">⌕</span> Buscar
+      </button>
+    </section>
+
+    <app-indicadores class="block mb-4"></app-indicadores>
+
+    <div class="grid min-w-0 gap-4 2xl:grid-cols-[1.8fr_0.95fr]">
+      <app-lista-produccion [registros]="registrosFiltrados" class="min-w-0"></app-lista-produccion>
+      <div class="grid content-start gap-3">
+        <app-produccion-operador></app-produccion-operador>
+        <app-conos-grosor></app-conos-grosor>
+        <app-conos-ancho></app-conos-ancho>
+      </div>
+    </div>
+    <p *ngIf="busquedaAplicada" class="mt-3 text-xs text-slate-500">Filtros aplicados en los datos de demostración. Conecta buscar() a tu API para consultar datos reales.</p>
+  </main>
+</div>
