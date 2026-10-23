@@ -3,7 +3,7 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 
 export const routes: Routes = [
  {
-    path:"**",
+    path:"",
     component: ReportesComponent
   }
 ];
