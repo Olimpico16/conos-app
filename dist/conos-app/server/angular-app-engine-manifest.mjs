@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: '/conos-app',
   allowedHosts: [],
   supportedLocales: {
   "en-US": ""
