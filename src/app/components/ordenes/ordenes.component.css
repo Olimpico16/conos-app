@@ -1,0 +1,26 @@
+:host { display: block; min-height: 100vh; }
+.sidebar { background: linear-gradient(180deg, #20272c 0%, #171c20 100%); z-index: 10; }
+.topbar { background: #20272c; min-height: 58px; }
+.nav-link { color: #d4d9de; }
+.nav-link:hover { background: rgba(255,255,255,.08); color: #fff; }
+.nav-link.nav-active { background: #ef2029; color: #fff; box-shadow: 0 5px 12px rgba(239,32,41,.18); }
+.brand-mark { box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+.orders-table thead { background: #f2f6fb; color: #3c5a7e; }
+.orders-table tbody tr { border-top: 1px solid #e8eef5; }
+.orders-table tbody tr:hover { background: #fafcff; }
+.cut-quantity { width: 76px; border: 1px solid #cbd5e1; border-radius: 6px; background: #fff; padding: 6px 7px; color: #1e293b; font-size: 13px; font-weight: 600; outline: none; }
+.cut-quantity:focus { border-color: #168bd2; box-shadow: 0 0 0 3px #dbeafe; }
+.cut-quantity:invalid { border-color: #ef4444; }
+.status-pill { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; border-radius: 999px; padding: 5px 10px; font-size: 11px; font-weight: 600; }
+.status-dot, .legend-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.status-none { background: #fee2e2; color: #dc2626; }
+.status-none .status-dot { background: #ef4444; }
+.status-partial { background: #fef3c7; color: #92400e; }
+.status-partial .status-dot { background: #d97706; }
+.status-done { background: #d1fae5; color: #047857; }
+.status-done .status-dot { background: #059669; }
+.summary-card { box-shadow: 0 1px 2px rgba(15,23,42,.03); }
+.info-note { line-height: 1.55; }
+@media (min-width: 1024px) {
+  .sidebar { overflow-y: auto; }
+}

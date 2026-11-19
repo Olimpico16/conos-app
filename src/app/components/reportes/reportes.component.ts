@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IndicadoresComponent } from './components/indicadores/indicadores.component';
 import { ConosAnchoComponent } from './components/conos-ancho/conos-ancho.component';
 import { ConosGrosorComponent } from './components/conos-grosor/conos-grosor.component';
@@ -11,7 +12,7 @@ import { ProduccionOperadorComponent } from './components/produccion-operador/pr
 @Component({
   selector: 'app-reportes',
   standalone: true,
-  imports: [CommonModule, FormsModule, IndicadoresComponent, ListaProduccionComponent,ProduccionOperadorComponent, ConosGrosorComponent, ConosAnchoComponent],
+  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive, IndicadoresComponent, ListaProduccionComponent,ProduccionOperadorComponent, ConosGrosorComponent, ConosAnchoComponent],
   templateUrl: './reportes.component.html',
 })
 export class ReportesComponent {

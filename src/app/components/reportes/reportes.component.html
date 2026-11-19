@@ -9,12 +9,12 @@
     </div>
 
     <nav class="flex gap-2 overflow-x-auto px-2 pb-3 lg:mt-2 lg:block lg:space-y-1">
-      <a class="flex shrink-0 items-center gap-3 rounded-lg bg-red-600 px-4 py-3 text-sm font-semibold shadow-md lg:mx-1" href="javascript:void(0)">
+      <a routerLink="/mi-reporte" routerLinkActive="bg-red-600" class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold shadow-md lg:mx-1">
         <span class="text-xl">▥</span> Reportes
       </a>
-      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="javascript:void(0)"><span class="text-xl">⌂</span> Órdenes</a>
-      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="javascript:void(0)"><span class="text-xl">▣</span> Cortadoras</a>
-      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="javascript:void(0)"><span class="text-xl">⚙</span> Configuración</a>
+      <a routerLink="/ordenes" routerLinkActive="bg-red-600" class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10"><span class="text-xl">⌂</span> Órdenes</a>
+      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="#" (click)="$event.preventDefault()"><span class="text-xl">▣</span> Cortadoras</a>
+      <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="#" (click)="$event.preventDefault()"><span class="text-xl">⚙</span> Configuración</a>
     </nav>
 
     <div class="mt-auto hidden border-t border-white/15 p-5 lg:block">

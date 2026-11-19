@@ -1,20 +1,12 @@
+import { PanelComponent } from '../../../../shared/components/panel/panel.component';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-conos-ancho',
   standalone: true,
-  imports: [CommonModule],
-  template: `
-    <section class="rounded-lg border border-blue-100 bg-white p-4 shadow-sm">
-      <h3 class="mb-3 font-bold">Conos por ancho</h3>
-      <div *ngFor="let item of anchos" class="mb-2 grid grid-cols-[64px_1fr_76px] items-center gap-2 last:mb-0">
-        <span class="text-xs">{{ item.ancho }} cm</span>
-        <div class="h-3.5 overflow-hidden rounded bg-slate-100"><div class="h-full rounded" [style.width.%]="item.porcentaje" [style.background]="item.color"></div></div>
-        <span class="text-right text-[11px] text-slate-600">{{ item.total | number }} ({{ item.porcentaje }}%)</span>
-      </div>
-    </section>
-  `,
+  imports: [CommonModule, PanelComponent],
+  templateUrl: './conos-ancho.component.html',
 })
 export class ConosAnchoComponent {
   anchos = [
