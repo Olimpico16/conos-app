@@ -1,5 +1,7 @@
 {
   "routes": {
-    "/conos-app": {}
+    "/conos-app": {},
+    "/conos-app/mi-reporte": {},
+    "/conos-app/ordenes": {}
   }
 }
