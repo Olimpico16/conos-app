@@ -12,7 +12,7 @@
       <a routerLink="/mi-reporte" routerLinkActive="bg-red-600" class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold shadow-md lg:mx-1">
         <span class="text-xl">▥</span> Reportes
       </a>
-      <a routerLink="/ordenes" routerLinkActive="bg-red-600" class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10"><span class="text-xl">⌂</span> Órdenes</a>
+      <a [routerLink]="'ordenes'" routerLinkActive="bg-red-600" class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10"><span class="text-xl">⌂</span> Órdenes</a>
       <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="#" (click)="$event.preventDefault()"><span class="text-xl">▣</span> Cortadoras</a>
       <a class="flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm hover:bg-white/10" href="#" (click)="$event.preventDefault()"><span class="text-xl">⚙</span> Configuración</a>
     </nav>
