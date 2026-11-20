@@ -8,11 +8,11 @@
     </div>
 
     <nav class="flex gap-2 overflow-x-auto px-2 pb-3 lg:mt-2 lg:block lg:space-y-1">
-      <a routerLink="/ordenes" routerLinkActive="nav-active"
+      <a [routerLink]="'ordenes'" routerLinkActive="nav-active"
          class="nav-link flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold transition">
         <span class="text-xl">⌂</span> Órdenes
       </a>
-      <a routerLink="/mi-reporte" routerLinkActive="nav-active"
+      <a [routerLink]="'mi-reporte'" routerLinkActive="nav-active"
          class="nav-link flex shrink-0 items-center gap-3 rounded-lg px-4 py-3 text-sm transition">
         <span class="text-xl">▣</span> Mi reporte
       </a>
